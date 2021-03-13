@@ -6,7 +6,16 @@ const Card = (article) => {
   // The tags used, the hierarchy of elements and their attributes must match the provided markup exactly!
   // The text inside elements will be set using their `textContent` property (NOT `innerText`).
   // Add a listener for click events so that when a user clicks on a card, the headline of the article is logged to the console.
-  //
+  const cardDiv = document.createElement("div");
+  document.appendChild(cardDiv);
+  cardDiv.classList.add("card");
+
+  const headlineDiv = document.createElement("div");
+  cardDiv.appendChild(headlineDiv);
+  headlineDiv.classList.add("headline");
+  headlineDiv.textContent = "headline";
+
+  cardDiv.addEventListener("click", () => console.log(headlineDiv));
   // <div class="card">
   //   <div class="headline">{ headline }</div>
   //   <div class="author">
@@ -17,7 +26,7 @@ const Card = (article) => {
   //   </div>
   // </div>
   //
-}
+};
 
 const cardAppender = (selector) => {
   // TASK 6
@@ -28,6 +37,6 @@ const cardAppender = (selector) => {
   // Create a card from each and every article object in the response, using the Card component.
   // Append each card to the element in the DOM that matches the selector passed to the function.
   //
-}
+};
 
-export { Card, cardAppender }
+export { Card, cardAppender };

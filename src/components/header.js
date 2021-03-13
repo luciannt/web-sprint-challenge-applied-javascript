@@ -4,24 +4,26 @@ const Header = (title, date, temp) => {
   // Implement this function taking `title`, `date` and `temp` as its 3 args and returning the markup below.
   // The tags used, the hierarchy of elements and their attributes must match the provided markup exactly!
   // The text inside elements will be set using their `textContent` property (NOT `innerText`).
+  //header parent
   const divParent = document.getElementsByClassName("header-container");
   const divClass = document.createElement("div");
   divParent.appendChild(divClass);
   divClass.classList.add("header");
-
+  //spanDate
   const spanDate = document.createElement("span");
-  divClass.appendChild(spanElement);
+  divClass.appendChild(spanDate);
   spanDate.classList.add("date");
   spanDate.textContent = date;
-
+  //headerTitle
   const headerTitle = document.createElement("h1");
   headerTitle.textContent = title;
-
+  //spanTemp
   const spanTemp = document.createElement("span");
   divClass.appendChild(spanTemp);
   spanTemp.classList.add("temp");
   spanTemp.textContent = temp;
 
+  return Header;
   //  <div class="header">
   //    <span class="date">{ date }</span>
   //    <h1>{ title }</h1>
